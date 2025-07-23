@@ -1,0 +1,53 @@
+/* Default CSS for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* You can add other default styles here for specific elements */
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    align-items: center;
+}
+.Container{
+    border: 3px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 90vh;
+}
+form{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+h1{
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 10px;
+  background-color:aqua;
+  padding: 8px;
+  border-radius: 20px;
+
+}
+input{
+    width: 80%;
+    font-weight: 700;
+}
+#predict{
+    background-color: green;
+    height: 30px;
+    color:white;
+    width: 80%;
+}
+#predict_box{
+    display: flex;
+    justify-content: center;
+}

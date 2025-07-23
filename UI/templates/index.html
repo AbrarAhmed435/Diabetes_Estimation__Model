@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <h1>Diabetes Prediction</h1>
+<div class="Container">
+    <form method="POST" action="/predict">
+<div class="box">
+        <label for="feature1">Pregnancies(in weeks):</label><br><br>
+        <input type="text" name="feature1" required></div>
+ <div class="box">
+        <label for="feature2">Glucose:</label><br><br>
+        <input type="text" name="feature2" required></div>
+<div class="box">
+        <label for="feature3">Blood Pressure:</label><br><br>
+        <input type="text" name="feature3" required></div>
+<div class="box">
+        <label for="feature4">Skin Thickness:</label><br><br>
+        <input type="text" name="feature4" required></div>
+<div class="box">
+        <label for="feature5">Insulin:</label><br><br>
+        <input type="text" name="feature5" required></div>
+<div class="box">
+        <label for="feature6">BMI:</label><br><br>
+        <input type="text" name="feature6" required></div>
+<div class="box">
+        <label for="feature7">Diabetes Pedigree Function:</label><br><br>
+        <input type="text" name="feature7" required></div>
+<div class="box">
+        <label for="feature8">Age(in years):</label><br><br>
+        <input type="text" name="feature8" required></div>
+<div class="box" id="predict_box">
+        <button type="submit" id="predict">Predict</button></div>
+    </form>
+
+    <!-- Prediction result will appear here -->
+
+{% if prediction_text is not none %}
+    {% if prediction_text == "Positive" %}
+        <div><h3 style="color:red;">⚠️ Your condition looks like diabetic. Please visit your doctor 🧑‍⚕️</h3></div>
+    {% elif prediction_text == "Negative" %}
+        <div><h4 style="color:green;">Congratulations 🎉, Your condition doesn't seem to be diabetic.</h4></div>
+    {% else %}
+        <div><h4 style="color:orange;">{{ prediction_text }}</h4></div>  <!-- Handle error messages -->
+    {% endif %}
+{% endif %}
+</div>
+</body>
+</html>
